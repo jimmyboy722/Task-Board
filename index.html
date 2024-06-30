@@ -63,42 +63,41 @@
             </div>
             <div class="modal-body">
               <!-- TASK FORM -->
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Title</label
-                >
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                />
-              </div>
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Recipient's username"
-                  aria-label="Recipient's username"
-                  aria-describedby="button-addon2"
-                />
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="button-addon2"
-                >
-                  Button
-                </button>
-              </div>
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label"
-                  >Description</label
-                >
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                ></textarea>
+              <div action="#">
+                <div class="row">
+                  <div class="col">
+                    <label for="taskTitle" class="form-label">Task Title</label>
+                    <input
+                      id="taskTitle"
+                      type="text"
+                      class="form-control"
+                      placeholder="First name"
+                      aria-label="First name"
+                    />
+                  </div>
+                  <div class="col">
+                    <label for="datePicker" class="form-label"
+                      >Task Due Date</label
+                    >
+                    <input
+                      type="text"
+                      id="datePicker"
+                      class="form-control"
+                      placeholder="Last name"
+                      aria-label="Last name"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label"
+                    >Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
+                </div>
               </div>
               <!-- END OF FORM -->
             </div>
