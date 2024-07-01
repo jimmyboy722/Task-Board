@@ -18,7 +18,7 @@ function generateTaskId() {
 
 // Todo: create a function to create a task card - takes "newTask" object as the argument
 function createTaskCard(newTask) {
-// created atricle element to house task card and added class for sizing and the id property from the newTask object
+// created article element to house task card and added class for sizing and the id property from the newTask object
   const taskCard = $('article').addClass('card w-75 task-card draggable my-3').attr('data-task-id', newTask.id);
   // the following variables make up the task card elements and respective sizing/attributes
   const taskCardHeader = $('div').addClass('card-header h3').text(newTask.taskTitle);
@@ -42,7 +42,36 @@ if (newTask.dueDate && newTask.status !== 'done'){
 };
 
 // Todo: create a function to render the task list and make cards draggable
-function renderTaskList() {}
+// Initializes an empty array called taskList if it does'nt already exist
+function renderTaskList() {
+  if (!taskList){
+    taskList = [];
+  }
+  // selecting variables to represent different status task cards and empties content for each
+  const todoCards = $('#todo-cards');
+  todoCards.empty();
+
+  const inProgressCards = $('#in-progress-cards');
+  inProgressCards.empty();
+
+  const doneCards = $('#done-cards');
+  doneCards.empty();
+
+};
+
+// iterates through each task in the taskList array and makes cards per status (for loop)
+for (let task of taskList) {
+  if (task.status === 'to-do') {
+    todoCards.append(createTaskCard(task));
+  } else if (task.status === 'in-progress') {
+    inProgressCards.append(createTaskCard(task));
+  } else if (task.status === 'done') {
+    doneCards.append(createTaskCard(task));
+  }
+};
+
+//make cards draggable
+
 
 // Todo: create a function to handle adding a new task
 function handleAddTask(event) {
