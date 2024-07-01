@@ -14,12 +14,32 @@ function generateTaskId() {
   }
   localStorage.setItem("nextID", JSON.stringify(nextId));
   return nextId;
-}
+};
 
-// Todo: create a function to create a task card
-function createTaskCard(task) {
-  const taskCard = $;
+// Todo: create a function to create a task card - takes "newTask" object as the argument
+function createTaskCard(newTask) {
+// created atricle element to house task card and added class for sizing and the id property from the newTask object
+  const taskCard = $('article').addClass('card w-75 task-card draggable my-3').attr('data-task-id', newTask.id);
+  // the following variables make up the task card elements and respective sizing/attributes
+  const taskCardHeader = $('div').addClass('card-header h3').text(newTask.taskTitle);
+  const taskCardBody = $('div').addClass('card-body');
+  const taskCardDescription = $('p').addClass('card-text').text(newTask.description);
+  const taskCardDueDate = $('p').addClass('card-text').text(newTask.dueDate);
+  // Button to delete the task and color along with text, and the id property from the newTask object. Also on-click event listener to link button to deletion
+  const taskCardDeleteButton = $('button').addClass('btn btn-danger delete').text('Delete Task').attr('data-task-id', newTask.id);
+  taskCardDeleteButton.on('click', handleDeleteTask)
+// Due-date/Card color correlation algorithm
+if (newTask.dueDate && newTask.status !== 'done'){
+  const currentDate = dayjs();
+  const taskDueDate = dayjs(task.dueDate, 'M/DD/YYYY');
+  if(now.isSame(taskDueDate, 'day')) {
+    taskCard.addClass('bg-warning text-white');
+  } else if (now.isAfter(taskDueDate)){
+    taskCard.addClass('bg-danger text-white');
+    taskCardDeleteButton.addClass('border-light')
+  }
 }
+};
 
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {}
