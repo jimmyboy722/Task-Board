@@ -63,42 +63,36 @@
             </div>
             <div class="modal-body">
               <!-- TASK FORM -->
-              <form id="taskForm" action="#">
-                <div class="row">
-                  <div class="col">
-                    <label for="taskTitle" class="form-label">Task Title</label>
-                    <input
-                      id="taskTitle"
-                      type="text"
-                      class="form-control"
-                      placeholder="First name"
-                      aria-label="First name"
-                    />
-                  </div>
-                  <div class="col">
-                    <label for="datePicker" class="form-label"
-                      >Task Due Date</label
-                    >
-                    <input
-                      type="text"
-                      id="datePicker"
-                      class="form-control"
-                      placeholder="Last name"
-                      aria-label="Last name"
-                    />
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="taskDescription" class="form-label"
-                    >Description</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="taskDescription"
-                    rows="3"
-                  ></textarea>
-                </div>
-              </form>
+              <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="formModalLabel">Add Task</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="taskForm" class="p-3">
+                        <div class="row">
+                          <div class="col-6">
+                            <label for="taskTitle" class="form-label">Task Title</label>
+                            <input autocomplete="off" type="text" class="form-control mb-3" id="taskTitle" />
+                          </div>
+                          <div class="col-6">
+                            <label for="taskDueDate" class="form-label">Task Due Date</label>
+                            <input type="text" class="form-control mb-3" id="datePicker" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <label for="taskDescription" class="form-label">Task Description</label>
+                            <textarea class="form-control mb-5" id="taskDescription" rows="3"></textarea>
+                          </div>
+                        </div>
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add
+                            Task</button>
+                        </div>
+                      </form>          
               <!-- END OF FORM -->
             </div>
             <div class="modal-footer">
