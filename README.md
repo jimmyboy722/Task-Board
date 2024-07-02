@@ -10,5 +10,5 @@ Truer words, right? Well this task board helps do just that and makes staying on
 - The tasks's progress state is updated accordingly and ,when saved, will stay in the new column even after your browser is refreshed.
 - If you wish to delete a task, it is removed from the task board and will not be added back after refreshing
 
-
+Here is a link to the deployed application, followed by an mock-up image of it. 
 ![Screenshot 2024-06-29 200145](https://github.com/jimmyboy722/Task-Board/assets/169507618/b9a70b2b-ffbf-412c-89b4-08335ff612cc)
